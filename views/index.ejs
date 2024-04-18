@@ -1,0 +1,104 @@
+
+<body>
+ <%- include('../views/partials/sidebar.ejs') %>
+
+
+<div class="col py-3">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="breadcrumb">  
+            <form class="d-flex" role="search" action="./search.ejs">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>          
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="breadcrumb"> <a class="nav-link" href="/add" style="color: rgb(0, 0, 0);"><i class="bi bi-person-fill-add"></i> Add Employee  </a></li>
+        </ol>
+      </div>
+    </div>
+      </div>
+    </nav>
+    <div class="table-responsive">
+      <table class="table table-striped text-center ">
+        
+    <thead class="thead-dark">
+      <tr class="table-dark">
+        <th class="align-middle">Employee id</th>
+        <th class="align-middle">Name</th>
+        <th class="align-middle">Phone Number</th>
+        <th class="align-middle">E-mail</th>
+        <th class="align-middle">Employee Image</th>
+        <th class="align-middle">Manager Name</th>
+        <th class="align-middle">Designation</th>
+        <th class="align-middle">Work Location</th>
+        <th class="align-middle">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% employees.forEach((element, index) => { %>
+        <tr class="align-middle">
+          <td><%= element.employeeId %></td>
+          <td><%= element.fullName %></td>
+          <td><%= element.phoneNumber %></td>
+          <td><%= element.email %></td>
+          <td><img [src]="<%= element.Image %>" width="50" class="img-fluid img-thumbnail" ></td>
+          <td><%= element.ManagerName %></td>
+          <td><%= element.Designation %></td>
+          <td>
+            <% if (works[index] && works[index].v) { %>
+              <%= works[index].v %>
+              <% } else { %>
+                N/A
+            <% } %>
+          </td>
+          <td class="align-middle">
+            <div class="d-flex justify-content-end">
+              <a href="/edit/<%= element._id %>" type="button" class="btn btn-primary btn-sm">
+                <i class="bi bi-pencil"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+</div>
+<% if (pages > 1) { %>
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <% if (current > 1) { %>
+        <li class="page-item">
+          <a class="page-link" href="/home?page=1" aria-label="First">
+            <span aria-hidden="true">&laquo;&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="/home?page=<%= current - 1 %>" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+      <% } %>
+      <% for (let i = 1; i <= pages; i++) { %>
+        <li class="page-item <%= i === current ? 'active' : '' %>">
+          <a class="page-link" href="/home?page=<%= i %>"><%= i %></a>
+        </li>
+      <% } %>
+      <% if (current < pages) { %>
+        <li class="page-item">
+          <a class="page-link" href="/home?page=<%= current + 1 %>" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="/home?page=<%= pages %>" aria-label="Last">
+            <span aria-hidden="true">&raquo;&raquo;</span>
+          </a>
+        </li>
+      <% } %>
+    </ul>
+  </nav>
+<% } %>
+</body>

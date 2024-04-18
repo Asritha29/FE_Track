@@ -1,0 +1,110 @@
+
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+    <div class="position-sticky pt-4 sidebar-sticky">
+        <div class="-flex flex-column flex-shrink-0 p-3 bs-info-text-emphasis" style="width: 280px;" id="element1">
+          
+          <div class="container" id="element2">
+            <!-- Assuming this code is within your EJS template -->
+           <a class="navbar-brand" href="/home">
+              <img src="<%= imageURL %>" alt="Logo" width="100" height="100" class="d-inline-block align-top">
+            </a>
+            <div id="my-nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active " >
+                        <a class="nav-link" href="/home" style="color: azure;"><i class="bi bi-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item active navbar-text">
+                        <a class="nav-link" href="/add" style="color: azure;"><i class="bi bi-person-fill-add"></i> Add Employee</a>
+                    </li>
+                    <li class="nav-item active navbar-text">
+                      <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#logoutModal" style="color: azure;"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                  </li>
+                   <!-- <li class="nav-item active">
+                      <form class="d-flex" role="search" action="../search.ejs">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                          </form>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- handelling logout-->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Logout Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to logout?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="/logout" class="btn btn-primary">Yes, Logout</a> <!-- Redirects to /logout route -->
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Sidebar</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link active" aria-current="page">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+          Orders
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+          Products
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+          Customers
+        </a>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>mdo</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+  </div>-->

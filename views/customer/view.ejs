@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2"><%= customer.fullName%></h1>
+    <div class="btn-toolbar mb-2 mb-md 0">
+        
+    </div>
+  </div>
+  <div class="col py-3">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Payments</a></li>
+            <li class="breadcrumb-item active"><%= customer.fullName%></li>
+          </ol>
+        </nav>
+      </div>
+      
+    </div>
+  
+  </div>
+  <ul class="list-group">
+    <li class="list-group-items">
+        <div class="row">
+            <div class="col" style="max-width: 140px"><b>Id:</b></div>
+            <div class="col"><%= customer.Id %></div>
+        </div>
+    </li>
+    <li class="list-group-items">
+        <div class="row">
+            <div class="col" style="max-width: 140px"><b>Name:</b></div>
+            <div class="col"><%= customer.fullName%></div>
+        </div>
+    </li>
+    <li class="list-group-items">
+        <div class="row">
+            <div class="col" style="max-width: 140px"><b>Contact:</b></div>
+            <div class="col"><%= customer.Contact %></div>
+        </div>
+    </li>
+    <li class="list-group-items">
+        <div class="row">
+            <div class="col" style="max-width: 140px"><b>Phone Number:</b></div>
+            <div class="col"><%= customer.phoneNumber%></div>
+        </div>
+    </li>
+    <li class="list-group-items">
+        <div class="row">
+            <div class="col" style="max-width: 140px"><b>Email:</b></div>
+            <div class="col"><%= customer.email %></div>
+        </div>
+    </li>
+    <li class="list-group-items">
+        <div class="row">
+            <div class="col" style="max-width: 140px"><b>Web Id:</b></div>
+            <div class="col"><%= customer.webId %></div>
+        </div>
+    </li>
+    <li class="list-group-items">
+        <div class="row">
+            <div class="col" style="max-width: 140px"><b>Amount:</b></div>
+            <div class="col"><%= customer.amount%></div>
+        </div>
+    </li>
+    <li class="list-group-items">
+        <div class="row">
+            <div class="col" style="max-width: 140px"><b>Date Of Exception:</b></div>
+            <div class="col"><%= customer.exp %> </div>
+        </div>
+    </li>
+  </ul>
